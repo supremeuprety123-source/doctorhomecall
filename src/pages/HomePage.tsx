@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, ArrowRight, Star, Clock, Shield, Users, ChevronRight, ChevronLeft, Sun, Moon } from 'lucide-react';
+import { Phone, ArrowRight, Star, Clock, Shield, Users, ChevronRight, ChevronLeft, Sun, Moon, ShieldCheck } from 'lucide-react';
 import { useServices, useTestimonials, useSiteContent, useDoctors, useSiteSettings, useClinicPhotos } from '../hooks/useData';
 import { useTheme } from '../hooks/useTheme';
 
@@ -13,6 +13,7 @@ interface Doctor {
   bio: string;
   image_url?: string;
   experience: string;
+  nmc_number?: string;
 }
 
 const iconMap: Record<string, string> = {
@@ -57,12 +58,13 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
           {/* Subtext: Qualification (Un-highlighted, clean default text) */}
           <p className="text-gray-500 text-sm font-normal mb-2">{doctor.qualification}</p>
 
-          {/* Specialty Tag (Background highlight removed, now clean tracking text) */}
-          <div className="mb-4">
-            <span className="text-gray-700 font-semibold text-xs tracking-wider uppercase">
-              {doctor.specialty}
-            </span>
-          </div>
+          {/* NMC Registration Badge */}
+          {doctor.nmc_number && (
+            <div className="inline-flex items-center gap-1.5 bg-red-50 border border-red-200 text-red-600 text-xs font-bold px-2.5 py-1 rounded-md mb-3">
+              <ShieldCheck size={13} className="flex-shrink-0" />
+              NMC No: {doctor.nmc_number}
+            </div>
+          )}
 
           {/* Expandable Bio Section */}
           <div className="text-gray-500 text-sm leading-relaxed">
@@ -90,6 +92,50 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
         </div>
       </div>
 
+    </div>
+  );
+}
+
+// 2. Separate Slideshow Component
+function Slideshow({ photos }: { photos: { url: string; caption: string }[] }) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (photos.length <= 1) return;
+    const timer = setInterval(() => setCurrent((c) => (c + 1) % photos.length), 4000);
+    return () => clearInterval(timer);
+  }, [photos.length]);
+
+  if (photos.length === 0) return null;
+
+  return (
+    <div className="relative w-full h-64 sm:h-80 lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
+      <img src={photos[current].url} alt={photos[current].caption} className="w-full h-full object-cover transition-opacity duration-700" key={current} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+      {photos[current].caption && (
+        <div className="absolute bottom-4 left-4 right-4">
+          <p className="text-white text-sm font-medium drop-shadow-lg">{photos[current].caption}</p>
+        </div>
+      )}
+      {photos.length > 1 && (
+        <>
+          <button onClick={() => setCurrent((c) => (c - 1 + photos.length) % photos.length)}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full flex items-center justify-center transition-colors">
+            <ChevronLeft size={20} className="text-white" />
+          </button>
+          <button onClick={() => setCurrent((c) => (c + 1) % photos.length)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full flex items-center justify-center transition-colors">
+            <ChevronRight size={20} className="text-white" />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {photos.map((_, i) => (
+              <button key={i} onClick={() => setCurrent(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${i === current ? 'bg-white w-6' : 'bg-white/50'}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

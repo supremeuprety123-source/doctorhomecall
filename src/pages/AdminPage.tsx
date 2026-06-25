@@ -153,6 +153,7 @@ export default function AdminPage() {
     const { data } = await supabase.from('doctors').insert({
       name: 'New Doctor', specialty: 'General Medicine', qualification: 'MBBS',
       experience: '5 years', bio: 'New doctor profile — edit this', sort_order: doctors.length + 1,
+      nmc_number: '',
     }).select().single();
     if (data) { await loadData(); setEditingId(data.id); setEditForm(data); }
   }
@@ -406,6 +407,16 @@ export default function AdminPage() {
                         <div><label className="block text-xs font-medium text-gray-500 mb-1">Specialty</label><input value={editForm.specialty || ''} onChange={(e) => setEditForm({ ...editForm, specialty: e.target.value })} className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 outline-none" /></div>
                         <div><label className="block text-xs font-medium text-gray-500 mb-1">Qualification</label><input value={editForm.qualification || ''} onChange={(e) => setEditForm({ ...editForm, qualification: e.target.value })} className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 outline-none" /></div>
                         <div><label className="block text-xs font-medium text-gray-500 mb-1">Experience</label><input value={editForm.experience || ''} onChange={(e) => setEditForm({ ...editForm, experience: e.target.value })} className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 outline-none" /></div>
+                        <div>
+                          <label className="block text-xs font-medium text-gray-500 mb-1">NMC Number</label>
+                          <input
+                            value={editForm.nmc_number || ''}
+                            onChange={(e) => setEditForm({ ...editForm, nmc_number: e.target.value })}
+                            placeholder="e.g. 12345"
+                            className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-red-500 outline-none"
+                          />
+                          <p className="text-xs text-gray-400 mt-1">Nepal Medical Council registration number. Shown on the doctor's public card.</p>
+                        </div>
                         <div><label className="block text-xs font-medium text-gray-500 mb-1">Sort Order</label><input type="number" value={editForm.sort_order || 0} onChange={(e) => setEditForm({ ...editForm, sort_order: parseInt(e.target.value) })} className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 outline-none" /></div>
                         <div className="flex items-end"><label className="flex items-center gap-2 text-sm pb-2.5"><input type="checkbox" checked={editForm.available || false} onChange={(e) => setEditForm({ ...editForm, available: e.target.checked })} className="rounded text-teal-600" /> Available</label></div>
                       </div>
@@ -426,7 +437,14 @@ export default function AdminPage() {
                             <h3 className="font-semibold text-gray-900">{doc.name}</h3>
                             <p className="text-sm text-teal-600">{doc.specialty} | {doc.qualification}</p>
                             <p className="text-sm text-gray-500 mt-1">{doc.bio}</p>
-                            <span className={`inline-block mt-2 text-xs font-medium px-2 py-0.5 rounded-full ${doc.available ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{doc.available ? 'Available' : 'Unavailable'}</span>
+                            <div className="flex items-center gap-2 mt-2">
+                              <span className={`inline-block text-xs font-medium px-2 py-0.5 rounded-full ${doc.available ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{doc.available ? 'Available' : 'Unavailable'}</span>
+                              {doc.nmc_number ? (
+                                <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200">NMC No: {doc.nmc_number}</span>
+                              ) : (
+                                <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-400">NMC No: not set</span>
+                              )}
+                            </div>
                           </div>
                           <div className="flex gap-2 flex-shrink-0">
                             <button onClick={() => startEdit(doc)} className="p-2 hover:bg-gray-100 rounded-lg transition-colors"><Edit3 size={16} className="text-gray-500" /></button>
