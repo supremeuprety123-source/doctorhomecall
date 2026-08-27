@@ -159,7 +159,6 @@ export default function HomePage() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 bg-teal-700/50 backdrop-blur-sm border border-teal-600/30 rounded-full px-4 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-teal-200 text-sm font-medium">Available 24/7</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 {hero?.title || 'Doctor at your doorstep'}
