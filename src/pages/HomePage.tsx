@@ -149,37 +149,85 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="relative bg-gradient-to-br from-teal-800 to-teal-950 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-teal-400 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-400 rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-teal-700/50 backdrop-blur-sm border border-teal-600/30 rounded-full px-4 py-1.5 mb-6">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+      <section className="relative bg-[#10302B] overflow-hidden">
+        <style>{`
+          @keyframes pulseDraw {
+            0% { stroke-dashoffset: 240; }
+            100% { stroke-dashoffset: 0; }
+          }
+          @keyframes pulseDot {
+            0%, 100% { opacity: 0.4; transform: scale(0.85); }
+            50% { opacity: 1; transform: scale(1.15); }
+          }
+          .vitals-line {
+            stroke-dasharray: 240;
+            animation: pulseDraw 2.8s ease-in-out infinite alternate;
+          }
+          .vitals-dot { animation: pulseDot 1.6s ease-in-out infinite; }
+        `}</style>
+
+        <div
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #FFFFFF 1px, transparent 1px)',
+            backgroundSize: '22px 22px',
+          }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3 mb-7">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="vitals-dot absolute inline-flex h-full w-full rounded-full bg-[#D4A24C]" />
+                </span>
+                <span className="font-['IBM_Plex_Mono'] text-[11px] tracking-[0.18em] text-[#D4A24C] uppercase">
+                  Accepting visits today · Kathmandu · Lalitpur · Bhaktapur
+                </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+
+              <h1 className="font-['Fraunces'] font-semibold text-4xl sm:text-5xl lg:text-6xl text-[#F7F3EA] leading-[1.08] mb-3">
                 {hero?.title || 'Doctor at your doorstep'}
               </h1>
-              <p className="text-lg sm:text-xl text-teal-200 leading-relaxed mb-8 max-w-2xl">
+
+              <svg width="180" height="20" viewBox="0 0 180 20" fill="none" className="mb-6">
+                <path
+                  className="vitals-line"
+                  d="M0 10 H55 L65 10 L72 2 L80 18 L88 10 H180"
+                  stroke="#B54A2E"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
+              <p className="font-['Inter'] text-lg text-[#B9CDC7] leading-relaxed mb-9 max-w-xl">
                 {hero?.body || 'A doctor comes to your home for check-ups, fever, elderly care, or when travel is difficult. Serving Kathmandu, Lalitpur and Bhaktapur.'}
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/appointment"
-                  className="inline-flex items-center justify-center gap-2 bg-theme-accent hover:bg-theme-accent-light text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                  className="inline-flex items-center justify-center gap-2 bg-[#B54A2E] hover:bg-[#9F3F26] text-[#F7F3EA] font-['Inter'] font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                   Book Home Visit <ArrowRight size={18} />
                 </Link>
                 <a href={`tel:${phone.replace(/[^0-9+]/g, '')}`}
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-xl border border-white/20 transition-all duration-300">
-                  <Phone size={18} /> Call Now
+                  className="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/5 text-[#F7F3EA] font-['Inter'] font-semibold px-8 py-4 rounded-lg border border-[#3E5C56] transition-all duration-300">
+                  <Phone size={18} className="text-[#D4A24C]" />
+                  <span className="font-['IBM_Plex_Mono'] text-sm tracking-wide">{phone}</span>
                 </a>
               </div>
             </div>
+
             {clinicPhotos.length > 0 && (
-              <div className="hidden lg:block">
-                <Slideshow photos={clinicPhotos} />
+              <div className="hidden lg:block relative">
+                <div className="absolute -top-4 -left-4 z-10 bg-[#F7F3EA] rounded-lg px-3 py-1.5 shadow-lg rotate-[-2deg]">
+                  <span className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.14em] uppercase text-[#10302B]">
+                    On duty today
+                  </span>
+                </div>
+                <div className="rotate-[1.5deg] hover:rotate-0 transition-transform duration-500 ring-4 ring-[#F7F3EA]/10 rounded-2xl">
+                  <Slideshow photos={clinicPhotos} />
+                </div>
               </div>
             )}
           </div>
@@ -187,7 +235,7 @@ export default function HomePage() {
       </section>
 
       {clinicPhotos.length > 0 && (
-        <section className="lg:hidden bg-white py-6">
+        <section className="lg:hidden bg-[#F7F3EA] py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Slideshow photos={clinicPhotos} />
           </div>
@@ -200,17 +248,17 @@ export default function HomePage() {
         {darkMode ? <Sun size={20} className="text-amber-400" /> : <Moon size={20} className="text-gray-600" />}
       </button>
 
-      <section className="bg-white border-b border-gray-100">
+      <section className="bg-[#F7F3EA] border-b border-[#E4DBC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {stats.map((item) => (
               <div key={item.desc} className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-theme-primary-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <item.icon size={22} className="text-theme-primary" />
+                <div className="w-12 h-12 bg-[#10302B]/5 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <item.icon size={22} className="text-[#B54A2E]" />
                 </div>
                 <div>
-                  <div className="font-bold text-lg text-gray-900">{item.label}</div>
-                  <div className="text-sm text-gray-500">{item.desc}</div>
+                  <div className="font-['Inter'] font-bold text-lg text-[#10302B]">{item.label}</div>
+                  <div className="font-['Inter'] text-sm text-[#6B7A75]">{item.desc}</div>
                 </div>
               </div>
             ))}
