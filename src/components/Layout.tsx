@@ -29,14 +29,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const isActive = (path: string) => location.pathname === path;
   
-  // Safe variable parsing with fallback text
-  const companyName = settings?.company_name || 'Doctors Home Call Service Nepal Pvt. Ltd.';
-  const shortName = settings?.company_name || 'Doctors Home Call Service';
-  const tagline = settings?.tagline || 'Quality Healthcare at Your Doorstep';
+  const companyName = settings?.company_name || 'Doctors Home Care At Door Step Private Limited';
+  const shortName = 'Doctors Home Care';
+  const tagline = settings?.tagline || 'Doctor visits at your home';
   const phone = settings?.mobile || settings?.phone || '+977-9801234567';
   const logoUrl = settings?.logo_url || '';
 
-  // Social Platform Configurations fetched safely from Supabase Settings
   const whatsappNumber = settings?.whatsapp || settings?.mobile || '9801234567';
   const viberNumber = settings?.viber || '';
   const tiktokUrl = settings?.tiktok || '';
@@ -44,7 +42,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Top bar */}
       <div className="bg-theme-primary-900 text-white text-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-10">
           <div className="flex items-center gap-4">
@@ -66,7 +63,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </div>
 
-      {/* Main nav */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-md' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -143,7 +139,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
               <p className="text-teal-200 text-sm leading-relaxed">
-                {settings?.tagline || 'Bringing quality healthcare to your doorstep across Kathmandu Valley.'}
+                {settings?.tagline || 'Home doctor visits in Kathmandu, Lalitpur and Bhaktapur.'}
               </p>
             </div>
             <div>
@@ -168,12 +164,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {settings?.mobile && <p className="hover:text-white transition-colors">{settings.mobile}</p>}
                 {settings?.email && <p className="hover:text-white transition-colors">{settings.email}</p>}
                 
-                {/* Standard Channels */}
-                {settings?.facebook && <a href={settings.facebook} target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">Facebook</a>}
+                              {settings?.facebook && <a href={settings.facebook} target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">Facebook</a>}
                 {settings?.instagram && <a href={settings.instagram} target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">Instagram</a>}
                 
-                {/* WhatsApp */}
-                {settings?.whatsapp && (
+                              {settings?.whatsapp && (
                   <a 
                     href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}`} 
                     target="_blank" 
@@ -184,8 +178,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </a>
                 )}
 
-                {/* Viber */}
-                {viberNumber && (
+                              {viberNumber && (
                   <a 
                     href={`https://viber.click/${viberNumber.replace(/[^0-9]/g, '')}`} 
                     target="_blank" 
@@ -196,8 +189,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </a>
                 )}
 
-                {/* TikTok */}
-                {tiktokUrl && (
+                              {tiktokUrl && (
                   <a 
                     href={tiktokUrl} 
                     target="_blank" 
@@ -208,8 +200,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </a>
                 )}
 
-                {/* Twitter / X */}
-                {twitterUrl && (
+                              {twitterUrl && (
                   <a 
                     href={twitterUrl} 
                     target="_blank" 
@@ -229,7 +220,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
 
-      {/* WhatsApp floating action icon button */}
       <a
         href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello%2C%20I%20would%20like%20to%20book%20a%20home%20visit.`}
         target="_blank"

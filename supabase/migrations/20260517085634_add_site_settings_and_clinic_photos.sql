@@ -101,21 +101,21 @@ CREATE POLICY "Authenticated can delete site assets"
 
 -- Seed site settings
 INSERT INTO site_settings (key, value) VALUES
-  ('email', 'info@doctorhomecall.com.np'),
+  ('email', 'info@doctorshomecare.com.np'),
   ('phone', '+977-01-4567890'),
   ('mobile', '+977-9801234567'),
   ('whatsapp', '+977-9801234567'),
   ('address', 'Putalisadak, Kathmandu, Nepal'),
-  ('company_name', 'Doctor Home Call Service Nepal Pvt. Ltd.'),
-  ('tagline', 'Quality Healthcare at Your Doorstep'),
+  ('company_name', 'Doctors Home Care At Door Step Private Limited'),
+  ('tagline', 'Doctor visits at your home'),
   ('logo_url', ''),
   ('facebook', ''),
   ('instagram', ''),
   ('youtube', ''),
   ('map_embed_url', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0!2d85.3147!3d27.7103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a0b5e5c3a3%3A0x3e5e5e5e5e5e5e5e!2sPutalisadak%2C%20Kathmandu%2C%20Nepal!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp'),
-  ('meta_description', 'Doctor Home Call Service Nepal Pvt. Ltd. provides 24/7 home visit doctors, pediatric care, elderly care, emergency visits, and telemedicine across Kathmandu Valley.'),
-  ('patients_served', '10,000+'),
-  ('doctor_count', '50+'),
-  ('response_time', '30 min'),
-  ('rating', '4.9/5'),
-  ('years_service', '7+');
+  ('meta_description', 'Doctor home visits, nursing support and lab sample collection in Kathmandu, Lalitpur and Bhaktapur.'),
+  ('patients_served', 'Home visits'),
+  ('doctor_count', 'NMC panel'),
+  ('response_time', 'Same day'),
+  ('rating', '24/7'),
+  ('years_service', 'Valley-wide');

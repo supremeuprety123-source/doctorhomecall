@@ -19,7 +19,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Our Services</h1>
-            <p className="text-xl text-teal-200">Comprehensive healthcare services delivered to your doorstep by qualified professionals.</p>
+            <p className="text-xl text-teal-200">Doctor visits, nursing support and sample collection at your home.</p>
           </div>
         </div>
       </section>
@@ -44,13 +44,13 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Getting a doctor to your home is simple and hassle-free.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Three steps from call to visit.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: '1', title: 'Book Online or Call', desc: 'Fill out our appointment form or call us directly. Share your symptoms and preferred time.' },
-              { step: '2', title: 'Doctor Assigned', desc: 'We match you with the best available doctor based on your medical needs and location.' },
-              { step: '3', title: 'Care at Home', desc: 'The doctor arrives at your doorstep, provides consultation and treatment in comfort.' },
+              { step: '1', title: 'Book Online or Call', desc: 'Use the booking form or call us. Tell us the problem and preferred time.' },
+              { step: '2', title: 'Doctor Assigned', desc: 'We assign a suitable doctor for your area and concern.' },
+              { step: '3', title: 'Care at Home', desc: 'The doctor visits your address, examines, advises, and writes medicines if needed.' },
             ].map((item) => (
               <div key={item.step} className="text-center">
                 <div className="w-16 h-16 bg-theme-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -68,7 +68,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Doctors</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Meet the experienced medical professionals who bring care to your home.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Doctors available for home visits.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {doctors.map((doctor) => (

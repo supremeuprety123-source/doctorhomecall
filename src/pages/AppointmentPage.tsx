@@ -68,7 +68,7 @@ export default function AppointmentPage() {
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Book an Appointment</h1>
             <p className="text-xl text-teal-200">
-              Schedule a home visit from our experienced doctors. We will be at your doorstep within 30 minutes.
+              Request a home visit. We will call back to confirm the time and doctor.
             </p>
           </div>
         </div>

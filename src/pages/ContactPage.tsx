@@ -5,13 +5,13 @@ export default function ContactPage() {
   const { content: contact } = useSiteContent('contact');
   const { settings } = useSiteSettings();
 
-  const mapUrl = settings.map_embed_url || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.062483863493!2d85.3305599!3d27.7153664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1be5ebf59565%3A0x142e77b54a7b3502!2sDoctors%20House%20Call%20Service%20Nepal!5e0!3m2!1sen!2snp!4v1715900000000!5m2!1sen!2snp';
-  const mapLinkUrl = settings.map_link_url || 'https://www.google.com/maps/place/Doctors+House+Call+Service+Nepal/@27.7153664,85.3305599,17z';
+  const mapUrl = settings.map_embed_url || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.062483863493!2d85.3305599!3d27.7153664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1be5ebf59565%3A0x142e77b54a7b3502!2sPutalisadak%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1715900000000!5m2!1sen!2snp';
+  const mapLinkUrl = settings.map_link_url || 'https://www.google.com/maps/place/Putalisadak,+Kathmandu/@27.7153664,85.3305599,17z';
 
   const contactInfo = [
     { icon: Phone, label: 'Phone', value: settings.phone || '+977-01-4567890', href: `tel:${(settings.phone || '+977-01-4567890').replace(/[^0-9+]/g, '')}` },
     { icon: Phone, label: 'Mobile', value: settings.mobile || '+977-9801234567', href: `tel:${(settings.mobile || '+977-9801234567').replace(/[^0-9+]/g, '')}` },
-    { icon: Mail, label: 'Email', value: settings.email || 'info@doctorhomecall.com.np', href: `mailto:${settings.email || 'info@doctorhomecall.com.np'}` },
+    { icon: Mail, label: 'Email', value: settings.email || 'info@doctorshomecare.com.np', href: `mailto:${settings.email || 'info@doctorshomecare.com.np'}` },
     { icon: MapPin, label: 'Address', value: settings.address || 'Putalisadak, Kathmandu, Nepal', href: mapLinkUrl, external: true },
     { icon: Clock, label: 'Hours', value: '24/7 — We never close', href: '#' },
     { icon: MessageCircle, label: 'WhatsApp', value: settings.whatsapp || '+977-9801234567', href: `https://wa.me/${(settings.whatsapp || '+9779801234567').replace(/[^0-9]/g, '')}`, external: true },

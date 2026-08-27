@@ -242,7 +242,6 @@ export default function AdminPage() {
     cancelled: 'bg-red-100 text-red-700',
   };
 
-  // ===== AUTH SCREEN =====
   if (authLoading) {
     return <div className="min-h-screen flex items-center justify-center bg-gray-50"><div className="animate-spin w-8 h-8 border-2 border-teal-600 border-t-transparent rounded-full" /></div>;
   }
@@ -256,7 +255,7 @@ export default function AdminPage() {
               <Lock size={28} className="text-white" />
             </div>
             <h1 className="text-2xl font-bold text-white">Admin Login</h1>
-            <p className="text-teal-300 text-sm mt-1">Doctor Home Call Service Nepal</p>
+            <p className="text-teal-300 text-sm mt-1">Doctors Home Care At Door Step</p>
           </div>
           <form onSubmit={handleLogin} className="bg-white rounded-2xl p-8 shadow-xl">
             {loginError && (
@@ -287,7 +286,6 @@ export default function AdminPage() {
     );
   }
 
-  // ===== DASHBOARD =====
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
@@ -328,7 +326,6 @@ export default function AdminPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        {/* ===== APPOINTMENTS ===== */}
         {activeTab === 'appointments' && (
           <div>
             <h2 className="text-lg font-bold text-gray-900 mb-6">Appointments</h2>
@@ -375,7 +372,6 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* ===== DOCTORS ===== */}
         {activeTab === 'doctors' && (
           <div>
             <div className="flex items-center justify-between mb-6">
@@ -460,7 +456,6 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* ===== SERVICES ===== */}
         {activeTab === 'services' && (
           <div>
             <div className="flex items-center justify-between mb-6">
@@ -502,7 +497,6 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* ===== TESTIMONIALS ===== */}
         {activeTab === 'testimonials' && (
           <div>
             <div className="flex items-center justify-between mb-6">
@@ -543,7 +537,6 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* ===== PAGE CONTENT ===== */}
         {activeTab === 'content' && (
           <div>
             <h2 className="text-lg font-bold text-gray-900 mb-2">Edit Page Content</h2>
@@ -581,7 +574,6 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* ===== CLINIC PHOTOS ===== */}
         {activeTab === 'photos' && (
           <div>
             <div className="flex items-center justify-between mb-6">
@@ -633,7 +625,6 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* ===== SITE SETTINGS ===== */}
         {activeTab === 'settings' && (
           <div>
             <h2 className="text-lg font-bold text-gray-900 mb-2">Site Settings</h2>

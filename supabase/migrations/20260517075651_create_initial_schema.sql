@@ -1,5 +1,5 @@
 /*
-  # Doctor Home Call Service Nepal - Initial Schema
+  # Doctors Home Care At Door Step - Initial Schema
 
   1. New Tables
     - `doctors`
@@ -165,24 +165,24 @@ INSERT INTO services (title, description, icon, sort_order) VALUES
 
 -- Seed data: Doctors
 INSERT INTO doctors (name, specialty, qualification, experience, bio, image_url, available, sort_order) VALUES
-  ('Dr. Rajesh Sharma', 'General Medicine', 'MBBS, MD', '15 years', 'Senior physician with extensive experience in home-based medical care and chronic disease management.', '', true, 1),
-  ('Dr. Sita Poudel', 'Pediatrics', 'MBBS, MD Pediatrics', '12 years', 'Specialist in child healthcare with a compassionate approach to pediatric home visits.', '', true, 2),
-  ('Dr. Bikash Thapa', 'Internal Medicine', 'MBBS, MD Medicine', '18 years', 'Expert in internal medicine with focus on elderly care and complex medical conditions.', '', true, 3),
-  ('Dr. Anjali Gurung', 'Physiotherapy', 'BPT, MPT', '10 years', 'Dedicated physiotherapist specializing in home-based rehabilitation and pain management.', '', true, 4),
-  ('Dr. Prakash Adhikari', 'Emergency Medicine', 'MBBS, MEM', '8 years', 'Emergency medicine specialist providing urgent home visit services across Kathmandu Valley.', '', true, 5),
-  ('Dr. Maya Rai', 'Family Medicine', 'MBBS, DFM', '14 years', 'Family medicine practitioner offering holistic home healthcare for all age groups.', '', true, 6);
+  ('Dr. Rajesh Sharma', 'General Medicine', 'MBBS, MD', '15 years', 'General physician. Home visits for fever, BP, diabetes follow-up and common adult illnesses.', '', true, 1),
+  ('Dr. Sita Poudel', 'Pediatrics', 'MBBS, MD Pediatrics', '12 years', 'Pediatrician. Home visits for children — fever, cough, growth checks and routine concerns.', '', true, 2),
+  ('Dr. Bikash Thapa', 'Internal Medicine', 'MBBS, MD Medicine', '18 years', 'Internal medicine. Focus on elderly patients and longer-term conditions managed at home.', '', true, 3),
+  ('Dr. Anjali Gurung', 'Physiotherapy', 'BPT, MPT', '10 years', 'Physiotherapist. Home sessions for mobility, post-injury recovery and pain management.', '', true, 4),
+  ('Dr. Prakash Adhikari', 'Emergency Medicine', 'MBBS, MEM', '8 years', 'Urgent home visits for acute but non-life-threatening problems across the valley.', '', true, 5),
+  ('Dr. Maya Rai', 'Family Medicine', 'MBBS, DFM', '14 years', 'Family medicine. Home care for mixed age groups and general check-ups.', '', true, 6);
 
 -- Seed data: Testimonials
 INSERT INTO testimonials (patient_name, content, rating, sort_order) VALUES
-  ('Ram Bahadur', 'The doctor arrived within 30 minutes of booking. Excellent service and very professional care. My mother felt much better after the visit.', 5, 1),
-  ('Sunita Shrestha', 'Very convenient for families with small children. Dr. Poudel was gentle and thorough with my kids. Highly recommend!', 5, 2),
-  ('Hari Prasad', 'The physiotherapy sessions at home saved me weeks of travel to the clinic. Dr. Gurung is truly skilled at her work.', 5, 3),
-  ('Anita Tamang', 'Used the emergency visit service late at night. Quick response and the doctor handled the situation very well. Grateful for this service.', 5, 4),
-  ('Deepak Karki', 'Regular check-ups for my elderly father are now so easy. The doctors are caring and always on time. Thank you!', 4, 5);
+  ('Ram Bahadur', 'Doctor came the same day for my mother. Checked her properly and explained the medicines. Helpful.', 5, 1),
+  ('Sunita Shrestha', 'Booked for my child with fever. The pediatric visit at home was calm and thorough.', 5, 2),
+  ('Hari Prasad', 'Physio at home after my knee problem. Saved the trip to the clinic each week.', 5, 3),
+  ('Anita Tamang', 'Called late evening for a relative who was unwell. Doctor visited and guided us clearly.', 5, 4),
+  ('Deepak Karki', 'Regular home check for my father. Timings are usually kept as discussed.', 4, 5);
 
 -- Seed data: Site content
 INSERT INTO site_content (section, title, subtitle, body) VALUES
-  ('hero', 'Quality Healthcare at Your Doorstep', 'Doctor Home Call Service Nepal Pvt. Ltd.', 'Bringing experienced doctors directly to your home across Kathmandu Valley. No waiting rooms, no travel stress — just compassionate medical care where you need it most.'),
-  ('about', 'About Us', 'Trusted Home Healthcare Since 2018', 'Doctor Home Call Service Nepal Pvt. Ltd. is a pioneering healthcare organization dedicated to making quality medical care accessible to everyone in the comfort of their homes. Founded in 2018, we have served over 10,000 patients across Kathmandu Valley with a team of experienced and compassionate doctors. Our mission is to eliminate the barriers between patients and healthcare by bringing the clinic to your living room. Whether it is a routine check-up, pediatric care, elderly care, or an urgent medical need, our team is just a call away.'),
-  ('contact', 'Contact Us', 'We are here to help', 'Phone: +977-01-4567890, +977-9801234567 | Email: info@doctorhomecall.com.np | Address: Putalisadak, Kathmandu, Nepal'),
-  ('cta', 'Book Your Home Visit Today', 'Available 24/7 across Kathmandu Valley', 'Call us or book online to get a doctor at your doorstep within 30 minutes.');
+  ('hero', 'Doctor at your doorstep', 'Doctors Home Care At Door Step Private Limited', 'A doctor comes to your home for check-ups, fever, elderly care, or when travel is difficult. Serving Kathmandu, Lalitpur and Bhaktapur.'),
+  ('about', 'About us', 'Home doctor visits in Kathmandu Valley', 'Doctors Home Care At Door Step Private Limited arranges doctor home visits, basic nursing support and lab sample collection in Kathmandu, Lalitpur and Bhaktapur. We help when someone is too unwell to travel, needs a routine check at home, or prefers care without a hospital wait.'),
+  ('contact', 'Contact', 'Call or message us', 'Phone: +977-01-4567890, +977-9801234567 | Email: info@doctorshomecare.com.np | Address: Putalisadak, Kathmandu, Nepal'),
+  ('cta', 'Need a home visit?', 'Call or book online', 'We will confirm the visit time and send a doctor to your address.');
