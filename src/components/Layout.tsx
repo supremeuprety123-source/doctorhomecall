@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const isActive = (path: string) => location.pathname === path;
   
   const companyName = settings?.company_name || 'Doctors Home Care At Door Step Private Limited';
-  const shortName = 'Doctors Home Care';
+  const shortName = 'Doctors Home Care At Door Step';
   const tagline = settings?.tagline || 'Doctor visits at your home';
   const phone = settings?.mobile || settings?.phone || '+977-9818863902';
   const logoUrl = settings?.logo_url || '';
