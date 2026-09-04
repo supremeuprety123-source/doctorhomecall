@@ -1,0 +1,19 @@
+# https://doctorshomecare.com.np/robots.txt
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow admin only
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://doctorshomecare.com.np/sitemap.xml

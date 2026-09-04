@@ -138,7 +138,7 @@ export default function HomePage() {
   const { photos: clinicPhotos } = useClinicPhotos();
   const { darkMode, toggleDarkMode } = useTheme();
 
-  const phone = settings?.mobile || settings?.phone || '+977-9801234567';
+  const phone = settings?.mobile || settings?.phone || '+977-9818863902';
 
   const stats = [
     { icon: Users, label: settings?.patients_served || 'Home visits', desc: 'Across the valley' },

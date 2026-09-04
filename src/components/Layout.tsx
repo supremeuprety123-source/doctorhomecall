@@ -32,10 +32,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const companyName = settings?.company_name || 'Doctors Home Care At Door Step Private Limited';
   const shortName = 'Doctors Home Care';
   const tagline = settings?.tagline || 'Doctor visits at your home';
-  const phone = settings?.mobile || settings?.phone || '+977-9801234567';
+  const phone = settings?.mobile || settings?.phone || '+977-9818863902';
   const logoUrl = settings?.logo_url || '';
 
-  const whatsappNumber = settings?.whatsapp || settings?.mobile || '9801234567';
+  const whatsappNumber = settings?.whatsapp || settings?.mobile || '9818863902';
   const viberNumber = settings?.viber || '';
   const tiktokUrl = settings?.tiktok || '';
   const twitterUrl = settings?.twitter || settings?.x_url || '';

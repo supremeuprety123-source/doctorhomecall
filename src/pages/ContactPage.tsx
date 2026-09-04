@@ -10,11 +10,11 @@ export default function ContactPage() {
 
   const contactInfo = [
     { icon: Phone, label: 'Phone', value: settings.phone || '+977-01-4567890', href: `tel:${(settings.phone || '+977-01-4567890').replace(/[^0-9+]/g, '')}` },
-    { icon: Phone, label: 'Mobile', value: settings.mobile || '+977-9801234567', href: `tel:${(settings.mobile || '+977-9801234567').replace(/[^0-9+]/g, '')}` },
+    { icon: Phone, label: 'Mobile', value: settings.mobile || '+977-9818863902', href: `tel:${(settings.mobile || '+977-9818863902').replace(/[^0-9+]/g, '')}` },
     { icon: Mail, label: 'Email', value: settings.email || 'doctorshomecallnepal575@gmail.com', href: `mailto:${settings.email || 'doctorshomecallnepal575@gmail.com'}` },
     { icon: MapPin, label: 'Address', value: settings.address || 'Putalisadak, Kathmandu, Nepal', href: mapLinkUrl, external: true },
     { icon: Clock, label: 'Hours', value: '24/7 — We never close', href: '#' },
-    { icon: MessageCircle, label: 'WhatsApp', value: settings.whatsapp || '+977-9801234567', href: `https://wa.me/${(settings.whatsapp || '+9779801234567').replace(/[^0-9]/g, '')}`, external: true },
+    { icon: MessageCircle, label: 'WhatsApp', value: settings.whatsapp || '+977-9818863902', href: `https://wa.me/${(settings.whatsapp || '+9779818863902').replace(/[^0-9]/g, '')}`, external: true },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function ContactPage() {
               <div className="mt-8 p-6 bg-theme-primary-50 rounded-2xl">
                 <h3 className="font-bold text-theme-primary-900 mb-2">Need Urgent Help?</h3>
                 <p className="text-sm text-theme-primary-700 mb-4">For medical emergencies, please call us directly. Our team is available 24/7.</p>
-                <a href={`tel:${(settings.mobile || '+977-9801234567').replace(/[^0-9+]/g, '')}`}
+                <a href={`tel:${(settings.mobile || '+977-9818863902').replace(/[^0-9+]/g, '')}`}
                   className="inline-flex items-center gap-2 bg-theme-primary hover:bg-theme-primary-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
                   <Phone size={18} /> Call Now
                 </a>
