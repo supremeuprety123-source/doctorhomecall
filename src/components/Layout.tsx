@@ -145,27 +145,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <main className="flex-1">{children}</main>
 
-      {/* Footer */}
-      <footer className="bg-theme-primary-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            <div>
-              <div className="flex items-center gap-2.5 mb-4">
-                {logoUrl ? (
-                  <img src={logoUrl} alt="Doctors Home Care At Door Step Pvt. Ltd." className="h-9 w-auto brightness-0 invert" />
-                ) : (
-                  <div className="w-9 h-9 bg-theme-primary rounded-lg flex items-center justify-center">
-                    <Stethoscope size={20} className="text-white" />
-                  </div>
-                )}
-                <div className="leading-tight">
-                  <div className="font-bold text-sm">Doctors Home Care <span className="text-teal-400">At Door Step Pvt. Ltd.</span></div>
-                  <div className="text-[10px] text-teal-300">{tagline}</div>
-                </div>
-              </div>
-              <p className="text-teal-200 text-sm leading-relaxed mb-6">
-                {settings?.tagline || 'Home doctor visits in Kathmandu, Lalitpur and Bhaktapur.'}
-              </p>
+     {/* Footer */}
+<footer className="bg-theme-primary-950 text-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div>
+        <div className="flex items-center gap-2.5 mb-4">
+          <img 
+            src="/favicon.png.png" 
+            alt="Doctors Home Care At Door Step Pvt. Ltd." 
+            className="h-9 w-auto" 
+          />
+          <div className="leading-tight">
+            <div className="font-bold text-sm">Doctors Home Care <span className="text-teal-400">At Door Step Pvt. Ltd.</span></div>
+            <div className="text-[10px] text-teal-300">{tagline}</div>
+          </div>
+        </div>
+        <p className="text-teal-200 text-sm leading-relaxed mb-6">
+          {settings?.tagline || 'Home doctor visits in Kathmandu, Lalitpur and Bhaktapur.'}
+        </p>
 
               {/* Social Media Section */}
               <div>
