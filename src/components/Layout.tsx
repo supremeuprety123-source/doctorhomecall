@@ -78,12 +78,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               
               <div className="leading-tight">
                 {/* Brand Name Structure */}
-                <div className="font-black text-theme-primary-900 dark:text-white text-lg sm:text-2xl lg:text-3xl xl:text-4xl tracking-tight">
-                  <span>Doctors Home Care </span>
-                  {/* Desktop Inline Version of 'At Door Step' */}
-                  <span className="hidden sm:inline text-teal-600 dark:text-teal-400">
+                <div className="font-black text-lg sm:text-2xl lg:text-3xl xl:text-4xl tracking-tight">
+                  {/* Line 1: Doctors Home Care */}
+                  <div className="text-gray-900 dark:text-white">
+                    Doctors Home Care
+                  </div>
+                  
+                  {/* Line 2 (Desktop/Laptop): At Door Step */}
+                  <div className="hidden sm:block text-orange-500 text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black">
                     At Door Step
-                  </span>
+                  </div>
                 </div>
 
                 {/* Mobile View: 'At Door Step' directly below title */}
