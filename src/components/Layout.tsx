@@ -78,7 +78,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               )}
               <div className="leading-tight">
                 {/* Ultra-Large Company Name */}
-                <div className="font-black text-theme-primary-900 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight">
+                <div className="font-black text-theme-primary-900 text-lg sm:text-2xl lg:text-3xl xl:text-4xl tracking-tight leading-tight">
                   {shortName}
                 </div>
                 <div className="text-xs sm:text-sm lg:text-base text-theme-primary font-semibold mt-0.5">{tagline}</div>
