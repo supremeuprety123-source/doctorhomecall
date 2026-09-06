@@ -64,24 +64,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </div>
 
-      {/* Main Header / Navbar */}
-     <div className="font-black text-theme-primary-900 text-xl sm:text-2xl lg:text-3xl tracking-tight">
+      {/* Main Header / Navbar with Expanded Height (h-24 lg:h-32) */}
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-md' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link to="/" className="flex items-center gap-3 group">
+          <div className="flex items-center justify-between h-24 lg:h-32">
+            <Link to="/" className="flex items-center gap-4 group">
               {logoUrl ? (
-                <img src={logoUrl} alt={shortName} className="h-10 sm:h-12 w-auto" />
+                <img src={logoUrl} alt={shortName} className="h-16 sm:h-20 lg:h-24 w-auto" />
               ) : (
-                <div className="w-10 h-10 sm:w-11 sm:h-11 bg-theme-primary rounded-lg flex items-center justify-center group-hover:opacity-90 transition-opacity">
-                  <Stethoscope size={24} className="text-white" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-theme-primary rounded-xl flex items-center justify-center group-hover:opacity-90 transition-opacity shrink-0">
+                  <Stethoscope className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" />
                 </div>
               )}
               <div className="leading-tight">
-                {/* Enlarged and Bolder Company Name */}
-                <div className="font-black text-theme-primary-900 text-base sm:text-lg lg:text-xl tracking-tight">
+                {/* Ultra-Large Company Name */}
+                <div className="font-black text-theme-primary-900 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight">
                   {shortName}
                 </div>
-                <div className="text-[10px] sm:text-xs text-theme-primary font-medium">{tagline}</div>
+                <div className="text-xs sm:text-sm lg:text-base text-theme-primary font-semibold mt-0.5">{tagline}</div>
               </div>
             </Link>
 
@@ -102,7 +102,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Mobile Menu Button */}
             <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
-              {menuOpen ? <X size={24} className="text-gray-700" /> : <Menu size={24} className="text-gray-700" />}
+              {menuOpen ? <X size={28} className="text-gray-700" /> : <Menu size={28} className="text-gray-700" />}
             </button>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div>
                 <h5 className="font-medium text-xs text-teal-200 uppercase tracking-wider mb-3">Connect With Us</h5>
                 <div className="flex items-center flex-wrap gap-2.5">
-                  {/* Facebook Icon */}
+                  {/* Facebook */}
                   {settings?.facebook && (
                     <a
                       href={settings.facebook}
@@ -169,7 +169,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </a>
                   )}
 
-                  {/* Instagram Icon */}
+                  {/* Instagram */}
                   {settings?.instagram && (
                     <a
                       href={settings.instagram}
@@ -184,7 +184,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </a>
                   )}
 
-                  {/* WhatsApp Icon */}
+                  {/* WhatsApp */}
                   {settings?.whatsapp && (
                     <a
                       href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}`}
@@ -199,7 +199,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </a>
                   )}
 
-                  {/* Viber Icon */}
+                  {/* Viber */}
                   {viberNumber && (
                     <a
                       href={`https://viber.click/${viberNumber.replace(/[^0-9]/g, '')}`}
@@ -214,7 +214,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </a>
                   )}
 
-                  {/* TikTok Icon */}
+                  {/* TikTok */}
                   {tiktokUrl && (
                     <a
                       href={tiktokUrl}
@@ -229,7 +229,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </a>
                   )}
 
-                  {/* Twitter / X Icon */}
+                  {/* Twitter / X */}
                   {twitterUrl && (
                     <a
                       href={twitterUrl}
