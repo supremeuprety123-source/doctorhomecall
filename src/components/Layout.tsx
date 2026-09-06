@@ -84,15 +84,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     Doctors Home Care
                   </div>
                   
-                  {/* Line 2 (Desktop/Laptop): At Door Step */}
+                  {/* Line 2 (Desktop/Laptop): At Door Step Pvt. Ltd. */}
                   <div className="hidden sm:block text-orange-500 text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black">
-                    At Door Step
+                    At Door Step Pvt. Ltd.
                   </div>
                 </div>
 
-                {/* Mobile View: 'At Door Step' directly below title */}
+                {/* Mobile View: 'At Door Step Pvt. Ltd.' directly below title */}
                 <div className="sm:hidden text-sm font-bold text-teal-600 dark:text-teal-400 tracking-wide mt-0.5">
-                  At Door Step
+                  At Door Step Pvt. Ltd.
                 </div>
 
                 {/* Desktop View: Tagline below title */}
@@ -152,14 +152,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <div className="flex items-center gap-2.5 mb-4">
                 {logoUrl ? (
-                  <img src={logoUrl} alt="Doctors Home Care At Door Step" className="h-9 w-auto brightness-0 invert" />
+                  <img src={logoUrl} alt="Doctors Home Care At Door Step Pvt. Ltd." className="h-9 w-auto brightness-0 invert" />
                 ) : (
                   <div className="w-9 h-9 bg-theme-primary rounded-lg flex items-center justify-center">
                     <Stethoscope size={20} className="text-white" />
                   </div>
                 )}
                 <div className="leading-tight">
-                  <div className="font-bold text-sm">Doctors Home Care <span className="text-teal-400">At Door Step</span></div>
+                  <div className="font-bold text-sm">Doctors Home Care <span className="text-teal-400">At Door Step Pvt. Ltd.</span></div>
                   <div className="text-[10px] text-teal-300">{tagline}</div>
                 </div>
               </div>
