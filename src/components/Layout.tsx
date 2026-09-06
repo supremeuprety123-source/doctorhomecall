@@ -65,7 +65,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Main Header / Navbar */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-md' : 'bg-white'}`}>
+     <div className="font-black text-theme-primary-900 text-xl sm:text-2xl lg:text-3xl tracking-tight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link to="/" className="flex items-center gap-3 group">
